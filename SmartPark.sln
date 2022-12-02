@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2F6A508E-A487-4CDD-84F1-2AA411206F68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.API", "src\SmartPark.API\SmartPark.API.csproj", "{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8FAA230C-C5A6-41A2-A581-CD4C4A776B85}
+	EndGlobalSection
+EndGlobal
