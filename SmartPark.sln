@@ -5,7 +5,13 @@ VisualStudioVersion = 17.4.33103.184
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{2F6A508E-A487-4CDD-84F1-2AA411206F68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.API", "src\SmartPark.API\SmartPark.API.csproj", "{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartPark.API", "src\SmartPark.API\SmartPark.API.csproj", "{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.Application", "src\SmartPark.Application\SmartPark.Application.csproj", "{49F2DC6C-695B-4913-A389-BA6F29D3B248}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.Domain", "src\SmartPark.Domain\SmartPark.Domain.csproj", "{B0198061-15C6-456F-A46B-EAAE8AD1809C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.Infrastructure", "src\SmartPark.Infrastructure\SmartPark.Infrastructure.csproj", "{83A01091-582B-446E-BA68-B6FA3009314D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,12 +23,27 @@ Global
 		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F2DC6C-695B-4913-A389-BA6F29D3B248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F2DC6C-695B-4913-A389-BA6F29D3B248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F2DC6C-695B-4913-A389-BA6F29D3B248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F2DC6C-695B-4913-A389-BA6F29D3B248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0198061-15C6-456F-A46B-EAAE8AD1809C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0198061-15C6-456F-A46B-EAAE8AD1809C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0198061-15C6-456F-A46B-EAAE8AD1809C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0198061-15C6-456F-A46B-EAAE8AD1809C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83A01091-582B-446E-BA68-B6FA3009314D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83A01091-582B-446E-BA68-B6FA3009314D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83A01091-582B-446E-BA68-B6FA3009314D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83A01091-582B-446E-BA68-B6FA3009314D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F8945F62-4FB5-49E6-9672-272B4E6AFC8B} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
+		{49F2DC6C-695B-4913-A389-BA6F29D3B248} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
+		{B0198061-15C6-456F-A46B-EAAE8AD1809C} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
+		{83A01091-582B-446E-BA68-B6FA3009314D} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FAA230C-C5A6-41A2-A581-CD4C4A776B85}
