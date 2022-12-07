@@ -6,7 +6,7 @@ using SmartPark.Infrastructure.Services.TextRecognition;
 namespace SmartPark.Infrastructure;
 public static class DependencyContainer
 {
-    public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
+    public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddSingleton<ITextRecognitionService, TextRecognitionService>();
     }
