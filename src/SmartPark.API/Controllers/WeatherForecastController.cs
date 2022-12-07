@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SmartPark.Infrastructure.Services.TextRecognition;
 
 namespace SmartPark.API.Controllers
 {
@@ -39,11 +40,21 @@ namespace SmartPark.API.Controllers
             {
                 if (imageFile.Length > 0)
                 {
-                    string filePath = Path.Combine(uploads, Guid.NewGuid()+""+imageFile.FileName);
-                    using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                    var t = new TextRecognitionService();
+                    using (var ms = new MemoryStream())
                     {
-                        imageFile.CopyToAsync(fileStream);
+                        imageFile.CopyTo(ms);
+                        var fileBytes = ms.ToArray();
+                        var a = t.RecognizeFromImageAsync(fileBytes).Result;
+
+
+                        // act on the Base64 data
                     }
+                    //string filePath = Path.Combine(uploads, Guid.NewGuid()+""+imageFile.FileName);
+                    //using (Stream fileStream = new FileStream(filePath, FileMode.Create))
+                    //{
+                    //    imageFile.CopyToAsync(fileStream);
+                    //}
                 }
                 return Ok();
             }
