@@ -13,7 +13,17 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
-
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+     .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, options =>
+     {
+         options.Authority = $"https://{builder.Configuration["Auth0:Domain"]}";
+         options.TokenValidationParameters =
+           new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+           {
+               ValidAudience = builder.Configuration["Auth0:Audience"],
+               ValidIssuer = $"{builder.Configuration["Auth0:Domain"]}"
+           };
+     });
 var app = builder.Build();
 
 await app.Services.SeedDatabaseAsync();
