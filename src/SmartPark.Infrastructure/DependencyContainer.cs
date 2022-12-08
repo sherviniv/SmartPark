@@ -8,6 +8,7 @@ using SmartPark.Application.Common.Interfaces;
 using SmartPark.Domain.Entities;
 using SmartPark.Infrastructure.Identity;
 using SmartPark.Infrastructure.Persistence;
+using SmartPark.Infrastructure.Services.DateTimeService;
 using SmartPark.Infrastructure.Services.TextRecognition;
 using System.Text;
 
@@ -49,6 +50,7 @@ public static class DependencyContainer
 
         services.AddScoped<ISmartParkContext>(provider => provider.GetService<SmartParkContext>()!);
         services.AddScoped<IJwtHandler, JwtHandler>();
+        services.AddScoped<IDateTime, DateTimeService>();
         services.AddSingleton<ITextRecognitionService, TextRecognitionService>();
     }
 

@@ -3,7 +3,7 @@ using Newtonsoft.Json.Serialization;
 using SmartPark.Application.Common.Exceptions;
 using System.Net;
 
-namespace Varking.API.Common.Middlewares;
+namespace SmartPark.API.Common.Middlewares;
 /// <summary>
 /// Handle http requests and Provides an HTTP response based on the exception type
 /// </summary>
