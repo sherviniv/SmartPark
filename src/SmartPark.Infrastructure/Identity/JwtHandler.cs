@@ -25,7 +25,7 @@ public class JwtHandler : IJwtHandler
         {
             Subject = new ClaimsIdentity(new Claim[]
             {
-                new Claim(ClaimTypes.NameIdentifier,user.Id),
+                new Claim(ClaimTypes.NameIdentifier,user.Id.ToString()),
             }),
             Issuer = _options.Issuer,
             Expires = DateTime.UtcNow.AddMinutes(_options.ExpiryMinutes),

@@ -3,12 +3,15 @@ using SmartPark.API.Common.Middlewares;
 using SmartPark.Application;
 using SmartPark.Application.Common.Interfaces;
 using SmartPark.Infrastructure;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization(); ;
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -21,7 +24,13 @@ builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
 var app = builder.Build();
 
 await app.Services.SeedDatabaseAsync();
-
+app.UseRequestLocalization(options =>
+{
+    var cultures = new List<CultureInfo> { new("en"), new("au") };
+    options.DefaultRequestCulture = new Microsoft.AspNetCore.Localization.RequestCulture("en");
+    options.SupportedCultures = cultures;
+    options.SupportedUICultures = cultures;
+});
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

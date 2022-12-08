@@ -30,7 +30,7 @@ public static class DependencyContainer
         });
 
         services.AddIdentityCore<ApplicationUser>()
-                .AddRoles<IdentityRole>()
+                .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<SmartParkContext>();
 
         services.AddAuthentication(x =>
