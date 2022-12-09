@@ -10,4 +10,6 @@ public class Parking
 
     public Guid UserId { get; set; }
     public ApplicationUser? ApplicationUser { get; set; }
+
+    public virtual ICollection<SmartDevice>? SmartDevices { get; set; }
 }

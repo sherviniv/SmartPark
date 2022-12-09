@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SmartPark.Infrastructure.Persistence;
@@ -11,9 +12,11 @@ using SmartPark.Infrastructure.Persistence;
 namespace SmartPark.Infrastructure.Persistence.Migrations
 {
     [DbContext(typeof(SmartParkContext))]
-    partial class SmartParkContextModelSnapshot : ModelSnapshot
+    [Migration("20221209163230_AddLogFields")]
+    partial class AddLogFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

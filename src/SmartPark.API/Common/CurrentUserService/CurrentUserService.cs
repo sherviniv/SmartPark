@@ -7,13 +7,17 @@ public class CurrentUserService : ICurrentUserService
 {
     public CurrentUserService(IHttpContextAccessor httpContextAccessor)
     {
-        UserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        var httpUserId = httpContextAccessor.HttpContext?.User?.FindFirstValue(ClaimTypes.NameIdentifier);
+        UserId = string.IsNullOrEmpty(httpUserId) ? null : Guid.Parse(httpUserId);
+
         var deviceId = httpContextAccessor.HttpContext?.User?.FindFirstValue(CustomClaims.DeviceId);
         DeviceId = string.IsNullOrEmpty(deviceId) ? null : int.Parse(deviceId);
+
         var parkingId = httpContextAccessor.HttpContext?.User?.FindFirstValue(CustomClaims.ParkingId);
         ParkingId = string.IsNullOrEmpty(parkingId) ? null : int.Parse(parkingId);
     }
-    public string? UserId { get; }
+
+    public Guid? UserId { get; }
     public int? DeviceId { get; set; }
     public int? ParkingId { get; set; }
 }
