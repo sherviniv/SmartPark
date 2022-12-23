@@ -4,7 +4,9 @@ using SmartPark.API.Common.Controller;
 using SmartPark.Application.Features.DeviceLogs.Commands.LogVehicle;
 using SmartPark.Application.Features.DeviceLogs.Commands.ProcessRequest;
 using SmartPark.Application.Features.DeviceLogs.Models;
+using SmartPark.Application.Features.DeviceLogs.Queries.GetLogState;
 using SmartPark.Application.Features.DeviceLogs.Queries.GetParkingLogs;
+using SmartPark.Domain.Enums;
 
 namespace SmartPark.API.Controllers;
 public class DeviceController : ApiControllerBase
@@ -27,4 +29,9 @@ public class DeviceController : ApiControllerBase
     [HttpGet("GetParkingLogs")]
     public async Task<IList<ParkingLogViewModel>> GetParkingLogs([FromQuery] GetParkingLogsQuery query)
      => await Mediator.Send(query);
+
+    [Authorize]
+    [HttpGet("GetLogState")]
+    public async Task<DoorAction> GetLogState([FromQuery] GetLogStateQuery query)
+      => await Mediator.Send(query);
 }
