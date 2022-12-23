@@ -40,11 +40,19 @@ public static class DependencyContainer
         })
         .AddJwtBearer(x =>
         {
+            x.RequireHttpsMetadata = false;
             x.SaveToken = true;
             x.TokenValidationParameters = new TokenValidationParameters
             {
-                ValidateIssuerSigningKey = true,
+                ValidIssuer = jwtOptions.Issuer, // site that makes the token
+                ValidateIssuer = false, // change this to avoid forwarding attacks
+                ValidAudience = "Any", // site that consumes the token
+                ValidateAudience = false, // change this to avoid forwarding attacks
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtOptions.Key)),
+                ValidateIssuerSigningKey = true,  // verify signature to avoid tampering
+                ValidateLifetime = true, // validate the expiration
+                ClockSkew = TimeSpan.Zero, // tolerance for the expiration date
+                TokenDecryptionKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtOptions.Key))
             };
         });
 
@@ -63,6 +71,21 @@ public static class DependencyContainer
             {
                 await context.Database.MigrateAsync();
             }
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+            await SeedDefaultUserAsync(userManager);
+        }
+    }
+
+    static async Task SeedDefaultUserAsync(UserManager<ApplicationUser> userManager)
+    {
+        var defaultUser = new ApplicationUser
+        {
+            UserName = "admin",
+        };
+
+        if (userManager.Users.All(u => u.UserName != defaultUser.UserName))
+        {
+            await userManager.CreateAsync(defaultUser, "Pass@123456");
         }
     }
 }
