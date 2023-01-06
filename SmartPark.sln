@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartPark.Domain", "src\Sma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SmartPark.Infrastructure", "src\SmartPark.Infrastructure\SmartPark.Infrastructure.csproj", "{83A01091-582B-446E-BA68-B6FA3009314D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartPark.WebUI", "src\SmartPark.WebUI\SmartPark.WebUI.csproj", "{D9661173-08E7-4732-A7AF-A3ED22DFF636}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +35,6 @@ Global
 		{83A01091-582B-446E-BA68-B6FA3009314D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A01091-582B-446E-BA68-B6FA3009314D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A01091-582B-446E-BA68-B6FA3009314D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9661173-08E7-4732-A7AF-A3ED22DFF636}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9661173-08E7-4732-A7AF-A3ED22DFF636}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9661173-08E7-4732-A7AF-A3ED22DFF636}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9661173-08E7-4732-A7AF-A3ED22DFF636}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,7 +44,6 @@ Global
 		{49F2DC6C-695B-4913-A389-BA6F29D3B248} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
 		{B0198061-15C6-456F-A46B-EAAE8AD1809C} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
 		{83A01091-582B-446E-BA68-B6FA3009314D} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
-		{D9661173-08E7-4732-A7AF-A3ED22DFF636} = {2F6A508E-A487-4CDD-84F1-2AA411206F68}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FAA230C-C5A6-41A2-A581-CD4C4A776B85}
